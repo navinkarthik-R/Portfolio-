@@ -118,15 +118,41 @@
 
   ////////////////////////////////////////////////////
   // 10. Contact Form Js
-  // Static site, no backend: hand the message to the visitor's mail app.
+  // Static site, no backend: FormSubmit relays the message to the inbox in
+  // data-to. Its first submission only emails that inbox an "Activate Form"
+  // link; messages are delivered once it has been clicked.
   $("#contact-form").on("submit", function (e) {
     e.preventDefault();
-    var f = this.elements;
-    var subject = "Portfolio enquiry from " + f.fullname.value;
-    var body = f.message.value + "\n\n- " + f.fullname.value + " (" + f.email.value + ")";
-    window.location.href =
-      "mailto:" + this.dataset.to +
-      "?subject=" + encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(body);
+    var form = this;
+    var to = form.dataset.to;
+    var $btn = $(form).find("button[type=submit]");
+    var $status = $("#contact-status");
+    var data = Object.fromEntries(new FormData(form));
+    data._subject = "Portfolio enquiry from " + data.name;
+    data._template = "table";
+    $btn.prop("disabled", true).text("sending...");
+    $status.text("");
+    fetch("https://formsubmit.co/ajax/" + to, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then(function (r) {
+        return r.json();
+      })
+      .then(function (res) {
+        if (String(res.success) !== "true") throw new Error(res.message);
+        form.reset();
+        $status.text("Thanks! Your message has been sent. I'll reply by email.");
+      })
+      .catch(function () {
+        $status.html(
+          'Sorry, the message could not be sent. Please email me at <a class="text-main-600 hover-underline" href="mailto:' +
+            to + '">' + to + "</a>.",
+        );
+      })
+      .finally(function () {
+        $btn.prop("disabled", false).text("send message");
+      });
   });
 })(jQuery);

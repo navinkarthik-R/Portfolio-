@@ -50,7 +50,7 @@
       nullTargetWarn: false,
     });
     let smoother = ScrollSmoother.create({
-      smoothTouch: 0.2,
+      smoothTouch: false, // native scrolling on phones and tablets
       smooth: 4,
       effects: true,
       normalizeScroll: false,
