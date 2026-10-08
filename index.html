@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navin Karthik R | Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Navin Karthik R - full stack developer and final-year ECE student at Velammal Engineering College, Chennai. React, Three.js, Java and ESP32 projects: S.E.E.D, LOCO Hazard Detection Helmet and RCCP."
+    />
+    <meta property="og:title" content="Navin Karthik R | Full Stack Developer" />
+    <meta
+      property="og:description"
+      content="Web apps, 3D interfaces and embedded systems. Top 100 at HACKHAZARDS '26, 1st Prize at the IETE Symposium."
+    />
+    <meta property="og:image" content="assets/images/navin-portrait.jpg" />
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/aos.css" />
+    <link rel="stylesheet" href="assets/css/phosphor.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      /* Portfolio-specific overrides on top of the Unifex template */
+      .header-three-logo a {
+        font-family: var(--heading-font);
+        font-size: 1.9rem;
+        font-weight: 700;
+        line-height: 1;
+        color: hsl(var(--heading-color));
+      }
+      .banner-three-man {
+        width: min(1060px, 68vw);
+      }
+      .banner-three-man img {
+        width: 100%;
+        /* the photo is cropped flat at the chest; fade it into the hero */
+        -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 98%);
+        mask-image: linear-gradient(to bottom, #000 70%, transparent 98%);
+      }
+      .banner-three-left-title {
+        font-size: 1.6rem;
+      }
+      .about-three-thumb {
+        /* the reveal tiles leave hairline seams; match the photo's black */
+        background: #000;
+      }
+      .portfolio-three-desc {
+        max-width: 640px;
+      }
+      .portfolio-three-links a {
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+      .feature-three-heading {
+        font-size: clamp(2rem, 6vw, 3.75rem);
+        word-break: normal;
+        margin-block-end: 60px;
+      }
+      .feature-three-left .tw-w-160-px {
+        width: auto;
+        min-width: 160px;
+        white-space: nowrap;
+      }
+      .edu-card {
+        height: 100%;
+        background: #f5f5f5;
+        box-shadow:
+          0 4px 4px 0 rgba(0, 0, 0, 0.25),
+          -4px -4px 0 0 rgba(255, 255, 255, 0.25);
+        padding: 36px 32px;
+      }
+      .footer-three-bottom-title {
+        font-size: clamp(32px, 12.5vw, 380px) !important;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+
+  <body class="tw-magic-cursor">
+    <!--==================== Preloader Start ====================-->
+    <div class="preloader">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <path
+          id="preloaderSvg"
+          d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"
+        ></path>
+      </svg>
+      <div class="preloader-heading">
+        <div class="load-text">
+          <span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span>
+        </div>
+      </div>
+    </div>
+    <!--==================== Preloader End ====================-->
+
+    <!--==================== Magic Cursor ====================-->
+    <div id="magic-cursor">
+      <div id="ball"></div>
+    </div>
+
+    <!-- ==================== Scroll to Top ==================== -->
+    <div class="back-to-top-wrapper">
+      <button id="back_to_top" type="button" class="back-to-top-btn" aria-label="Back to top">
+        <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- ==================== Offcanvas Menu Start ==================== -->
+    <div class="tw-offcanvas-2-area p-relative">
+      <div class="tw-offcanvas-2-bg is-left left-box"></div>
+      <div class="tw-offcanvas-2-bg is-right right-box d-none d-md-block"></div>
+      <div class="tw-offcanvas-2-wrapper">
+        <div class="tw-offcanvas-2-left left-box">
+          <div class="tw-offcanvas-2-left-wrap d-flex justify-content-between align-items-center">
+            <div class="twoffcanvas__logo">
+              <a class="logo-1 font-heading fw-bold tw-text-3xl text-white" href="#home">Navin<span class="text-main-two-600">.</span></a>
+            </div>
+            <div class="tw-offcanvas-2-close d-md-none text-end">
+              <button class="tw-offcanvas-2-close-btn">
+                <span class="text"><span class="text-white">close</span></span>
+                <span class="d-inline-block">
+                  <span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="32.621" height="1.00918" transform="matrix(0.704882 0.709325 -0.704882 0.709325 1.0061 0)" fill="currentcolor" />
+                      <rect width="32.621" height="1.00918" transform="matrix(0.704882 -0.709325 0.704882 0.709325 0 23.2842)" fill="currentcolor" />
+                    </svg>
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+          <div class="tw-main-menu-mobile menu-hover-active counter-row">
+            <nav></nav>
+          </div>
+        </div>
+        <div class="tw-offcanvas-2-right right-box d-none d-md-block p-relative">
+          <div class="tw-offcanvas-2-close text-end">
+            <button class="tw-offcanvas-2-close-btn">
+              <span class="text"><span>close</span></span>
+              <span class="d-inline-block">
+                <span>
+                  <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.80859 9.80762L28.1934 28.1924" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M9.80859 28.1924L28.1934 9.80761" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+          <div class="tw-offcanvas-2-right-inner d-flex flex-column justify-content-between h-100">
+            <div class="twoffcanvas__contact-info">
+              <div class="twoffcanvas__contact-title">
+                <h5 class="text-white">Get in touch</h5>
+              </div>
+              <ul>
+                <li>
+                  <span class="text-main-two-600 tw-text-xl"><i class="ph ph-map-pin-line"></i></span>
+                  <span class="text-white tw-ms-2">Chennai, Tamil Nadu, India</span>
+                </li>
+                <li>
+                  <span class="text-main-two-600 tw-text-xl"><i class="ph ph-envelope-simple"></i></span>
+                  <a class="text-white" href="mailto:navinkarthik26@gmail.com">navinkarthik26@gmail.com</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-social">
+              <ul class="tw-gap-2">
+                <li>
+                  <a href="https://github.com/navinkarthik-R" target="_blank" rel="noopener">
+                    <span class="active-media d-flex align-items-center tw-gap-1">GITHUB <i class="ph ph-arrow-bend-up-right"></i></span>
+                    <span class="hover-media"><i class="ph ph-github-logo"></i></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/navin-karthik-r" target="_blank" rel="noopener">
+                    <span class="active-media d-flex align-items-center tw-gap-1">LINKEDIN <i class="ph ph-arrow-bend-up-right"></i></span>
+                    <span class="hover-media"><i class="ph ph-linkedin-logo"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ==================== Offcanvas Menu End ==================== -->
+
+    <!-- ==================== Header Start ==================== -->
+    <header class="header header-two header-three tw-transition-all tw-z-99 position-relative">
+      <div class="container tw-container-1800-px">
+        <nav class="d-flex align-items-center justify-content-between position-relative" aria-label="Primary">
+          <div class="header-three-logo tw-rounded-md">
+            <a href="#home" class="link">Navin<span class="text-main-two-600">.</span></a>
+          </div>
+
+          <div class="header-three-social d-none d-lg-block">
+            <ul class="d-flex tw-gap-205">
+              <li>
+                <a class="tw-w-13 tw-h-13 lh-1 d-inline-flex justify-content-center align-items-center text-heading tw-text-xl tw-rounded-md" href="https://github.com/navinkarthik-R" target="_blank" rel="noopener" aria-label="GitHub"><i class="ph-bold ph-github-logo"></i></a>
+              </li>
+              <li>
+                <a class="tw-w-13 tw-h-13 lh-1 d-inline-flex justify-content-center align-items-center text-heading tw-text-xl tw-rounded-md" href="https://www.linkedin.com/in/navin-karthik-r" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ph-bold ph-linkedin-logo"></i></a>
+              </li>
+              <li>
+                <a class="tw-w-13 tw-h-13 lh-1 d-inline-flex justify-content-center align-items-center text-heading tw-text-xl tw-rounded-md" href="mailto:navinkarthik26@gmail.com" aria-label="Email"><i class="ph-bold ph-envelope-simple"></i></a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Source for the offcanvas menu (copied in by main.js) -->
+          <div class="header-menu d-none">
+            <div class="main-menu">
+              <nav class="tw-main-menu-content">
+                <ul>
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#skills">Skills</a></li>
+                  <li><a href="#projects">Projects</a></li>
+                  <li><a href="#achievements">Achievements</a></li>
+                  <li><a href="#education">Education</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="header-right d-flex align-items-center tw-gap-705">
+            <div class="header-three-menu">
+              <button class="tw-offcanvas-open-btn tw-w-13 tw-h-13 lh-1 d-inline-flex justify-content-center align-items-center tw-transition-3 tw-rounded-md" aria-label="Open menu">
+                <span><img class="tw-transition-3" src="assets/icons/header-three-toggle.svg" alt="" /></span>
+              </button>
+            </div>
+            <div class="header-three-button d-none d-md-block">
+              <a class="tw-hover-btn bg-black text-white fw-bold tw-py-4 tw-px-10 d-inline-block hover-text-white text-uppercase tw-rounded-md" href="Navin_Karthik_R_Resume.pdf" target="_blank" rel="noopener">
+                download cv
+                <span class="tw-hover-btn-circle-dot bg-main-two-600"></span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- ==================== Header End ==================== -->
+
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <main>
+        <!-- ==================== Hero ==================== -->
+        <section class="banner-three-area" id="home">
+          <div class="container tw-container-1800-px">
+            <div class="row">
+              <div class="col-xl-12">
+                <div class="banner-three-wrapper position-relative z-1">
+                  <div class="banner-three-man position-absolute start-50 translate-middle-x">
+                    <img src="assets/images/navin-cutout.webp" alt="Portrait of Navin Karthik R" />
+                  </div>
+                  <h1 class="banner-three-title text-black tw-mb-30">developer</h1>
+                  <div class="banner-three-wrap d-flex justify-content-between align-items-end position-relative z-1">
+                    <div class="banner-three-left tw-rounded-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                      <h2 class="banner-three-left-title tw-mb-6">
+                        Hello! I'm Navin Karthik R, a full stack developer and ECE undergrad from Chennai.
+                      </h2>
+                      <div class="banner-three-list">
+                        <ul>
+                          <li class="tw-text-lg fw-medium d-inline-flex align-items-center tw-gap-2 tw-mb-4"><span><img src="assets/icons/banner-three-pluse.svg" alt="" /></span>React &amp; JavaScript</li>
+                          <li class="tw-text-lg fw-medium d-inline-flex align-items-center tw-gap-2 tw-mb-4"><span><img src="assets/icons/banner-three-pluse.svg" alt="" /></span>Three.js &amp; 3D Web</li>
+                          <li class="tw-text-lg fw-medium d-inline-flex align-items-center tw-gap-2 tw-mb-4"><span><img src="assets/icons/banner-three-pluse.svg" alt="" /></span>Java &amp; DSA</li>
+                          <li class="tw-text-lg fw-medium d-inline-flex align-items-center tw-gap-2 tw-mb-4"><span><img src="assets/icons/banner-three-pluse.svg" alt="" /></span>ESP32 &amp; Arduino</li>
+                          <li class="tw-text-lg fw-medium d-inline-flex align-items-center tw-gap-2 tw-mb-4"><span><img src="assets/icons/banner-three-pluse.svg" alt="" /></span>Git &amp; GitHub</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="banner-three-center text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                      <h3 class="banner-three-center-title tw-text-120">
+                        Building web apps, 3D interfaces and embedded systems.
+                      </h3>
+                      <div class="banner-three-button">
+                        <a class="tw-hover-btn bg-black text-white fw-bold tw-py-4 tw-px-10 d-inline-block hover-text-white text-uppercase tw-rounded-lg" href="#projects">
+                          view projects
+                          <span class="tw-hover-btn-circle-dot bg-main-two-600"></span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="banner-three-right tw-rounded-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                      <div class="banner-three-counter-item tw-rounded-md tw-mb-4 position-relative">
+                        <h4 class="banner-three-counter-title tw-text-101 fw-semibold font-heading text-heading tw-mb-2 lh-1">
+                          8.00
+                        </h4>
+                        <p class="banner-three-counter-paragraph tw-text-lg fw-medium text-heading">CGPA, B.E. Electronics &amp; Communication</p>
+                      </div>
+                      <div class="banner-three-counter-item tw-rounded-md tw-mb-4 ms-auto bg-black">
+                        <h4 class="banner-three-counter-title tw-text-101 fw-semibold font-heading text-white tw-mb-2 lh-1">
+                          Top <span class="purecounter font-heading" data-purecounter-duration="3" data-purecounter-end="100"></span>
+                        </h4>
+                        <p class="banner-three-counter-paragraph tw-text-lg fw-medium text-white">Global rank at HACKHAZARDS '26</p>
+                      </div>
+                      <div class="banner-three-counter-item tw-rounded-md tw-mb-4">
+                        <h4 class="banner-three-counter-title tw-text-101 fw-semibold font-heading text-heading tw-mb-2 lh-1">
+                          <span class="purecounter font-heading" data-purecounter-duration="1" data-purecounter-end="1"></span>st
+                        </h4>
+                        <p class="banner-three-counter-paragraph tw-text-lg fw-medium text-heading">Prize at the IETE Symposium</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== About ==================== -->
+        <section class="about-three-area py-120 position-relative z-1" id="about">
+          <div class="container tw-container-1800-px">
+            <div class="about-three-top position-relative z-1">
+              <div class="row justify-content-center tw-mb-21">
+                <div class="col-xl-9">
+                  <div class="text-center">
+                    <h2 class="about-three-title text-heading tw-text-15 tw-itm-title tw-itm-anim">
+                      I build full stack web apps and the hardware they talk to, and I learn fastest by shipping under hackathon deadlines.
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-6">
+                  <div class="about-three-thumb w-100 tw-clip-anim tw-rounded-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <img class="tw-anim-img w-100 tw-rounded-lg" data-animate="true" src="assets/images/navin-portrait.jpg" alt="Navin Karthik R" />
+                  </div>
+                </div>
+                <div class="col-xl-6">
+                  <div class="about-three-right" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <div>
+                      <p class="tw-text-xl tw-mb-10">
+                        I'm Navin Karthik R, a final-year Electronics and Communication Engineering student at Velammal Engineering College, Chennai, with a CGPA of 8.00. I work across the stack: React and Three.js on the front end, Java for problem solving and data structures, and ESP32 and Arduino when a project needs to sense the physical world.
+                      </p>
+                      <p class="tw-text-xl tw-mb-10">
+                        Most of what I've built came out of hackathons and symposiums: an AI-assisted developmental screening platform that ranked in the global top 100 at HACKHAZARDS '26, a hazard-detection helmet that won 1st prize at the IETE Symposium, and a pharma reverse-logistics platform built in 24 hours.
+                      </p>
+                      <p class="tw-text-xl tw-mb-10">
+                        I've presented my work at technical symposiums and hackathon pitches, and I'm looking for an entry-level engineering role where I can keep shipping and keep learning.
+                      </p>
+                    </div>
+                    <div class="about-three-counter d-inline-block">
+                      <div class="tw-hover-btn-wrapper d-inline-block">
+                        <a class="tw-btn-circle tw-hover-btn-item tw-hover-btn tw-w-160-px tw-h-160-px lh-1 d-inline-flex justify-content-center align-items-center rounded-circle position-relative overflow-hidden border border-1 border-neutral-200" href="#achievements">
+                          <span class="d-flex flex-column justify-content-center">
+                            <span class="tw-btn-circle-icon text-heading tw-text-8 tw-transition-3 font-heading fw-medium">3</span>
+                            <span class="text-heading fw-bold text-center tw-transition-3 tw-text-2xl fw-medium">Hackathons</span>
+                          </span>
+                          <i class="tw-btn-circle-dot bg-main-two-600"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="about-three-wrap-shape d-flex justify-content-between">
+                <div class="banner-three-counter-item tw-rounded-md position-relative" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                  <h2 class="banner-three-counter-title tw-text-101 fw-semibold font-heading text-heading tw-mb-2 lh-1">
+                    <span class="purecounter font-heading" data-purecounter-duration="2" data-purecounter-end="85"></span>%
+                  </h2>
+                  <p class="banner-three-counter-paragraph tw-text-lg fw-medium text-heading">NPTEL, Programming in Java</p>
+                </div>
+                <div class="banner-three-counter-item tw-rounded-md position-relative" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                  <h2 class="banner-three-counter-title tw-text-101 fw-semibold font-heading text-heading tw-mb-2 lh-1">
+                    <span class="purecounter font-heading" data-purecounter-duration="2" data-purecounter-end="19"></span> days
+                  </h2>
+                  <p class="banner-three-counter-paragraph tw-text-lg fw-medium text-heading">Internship at a live thermal power station</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== Marquee ==================== -->
+        <div class="marquee tw-pt-17 bg-black" aria-hidden="true">
+          <div class="marquee_left d-flex align-items-center justify-content-between tw-gap-16 overflow-hidden">
+            <div><h2 class="marquee-two-title marquee-three-title text-uppercase text-white">Full Stack <span class="text-white">-</span></h2></div>
+            <div><h2 class="marquee-two-title marquee-three-title text-uppercase text-stroke">React <span class="text-white">-</span></h2></div>
+            <div><h2 class="marquee-two-title marquee-three-title text-uppercase text-white">Three.js <span class="text-white">-</span></h2></div>
+            <div><h2 class="marquee-two-title marquee-three-title text-uppercase text-stroke">Java <span class="text-white">-</span></h2></div>
+            <div><h2 class="marquee-two-title marquee-three-title text-uppercase text-white">ESP32 <span class="text-white">-</span></h2></div>
+          </div>
+        </div>
+
+        <!-- ==================== Skills ==================== -->
+        <section class="service-three-area bg-black pt-120 tw-pb-15" id="skills">
+          <div class="container tw-container-1800-px">
+            <div class="row">
+              <div class="col-12">
+                <div class="service-three-wrapper">
+                  <div class="service-three-single" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="200">
+                    <div class="service-three-item d-flex justify-content-between align-items-center">
+                      <div class="service-three-content d-flex tw-gap-14">
+                        <div>
+                          <span class="service-three-number text-white tw-text-xl d-inline-flex align-items-center tw-gap-3 lh-1 tw-mt-5 tw-transition-3">01 <img class="tw-transition-3" src="assets/icons/service-three-arrow.svg" alt="" /></span>
+                        </div>
+                        <div>
+                          <h2 class="service-three-title tw-text-15 text-white tw-mb-4"><a href="#projects">Full Stack Web</a></h2>
+                          <div class="portfolio-list portfolio-two-list">
+                            <ul class="d-flex tw-gap-205 flex-wrap">
+                              <li><a class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-heading tw-transition-3" href="#project-seed">React</a></li>
+                              <li><a class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-heading tw-transition-3" href="#project-rccp">JavaScript</a></li>
+                              <li><a class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-heading tw-transition-3" href="#project-rccp">SQL</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service-three-single ms-auto" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="300">
+                    <div class="service-three-item d-flex justify-content-between align-items-center">
+                      <div class="service-three-content d-flex tw-gap-14">
+                        <div>
+                          <span class="service-three-number text-white tw-text-xl d-inline-flex align-items-center tw-gap-3 lh-1 tw-mt-5 tw-transition-3">02 <img class="tw-transition-3" src="assets/icons/service-three-arrow.svg" alt="" /></span>
+                        </div>
+                        <div>
+                          <h2 class="service-three-title tw-text-15 text-white tw-mb-4"><a href="#project-seed">3D &amp; Interactive UI</a></h2>
+                          <div class="portfolio-list portfolio-two-list">
+                            <ul class="d-flex tw-gap-205 flex-wrap">
+                              <li><a class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-heading tw-transition-3" href="#project-seed">Three.js</a></li>
+                              <li><a class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-heading tw-transition-3" href="#project-seed">HTML &amp; CSS</a></li>
+                              <li><a class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-heading tw-transition-3" href="#project-seed">Data Viz</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service-three-single" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400">
+                    <div class="service-three-item d-flex justify-content-between align-items-center">
+                      <div class="service-three-content d-flex tw-gap-14">
+                        <div>
+                          <span class="service-three-number text-white tw-text-xl d-inline-flex align-items-center tw-gap-3 lh-1 tw-mt-5 tw-transition-3">03 <img class="tw-transition-3" src="assets/icons/service-three-arrow.svg" alt="" /></span>
+                        </div>
+                        <div>
+                          <h2 class="service-three-title tw-text-15 text-white tw-mb-4"><a href="#project-loco">Embedded &amp; IoT</a></h2>
+                          <div class="portfolio-list portfolio-two-list">
+                            <ul class="d-flex tw-gap-205 flex-wrap">
+                              <li><a class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-heading tw-transition-3" href="#project-loco">ESP32</a></li>
+                              <li><a class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-heading tw-transition-3" href="#project-loco">Arduino</a></li>
+                              <li><a class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-heading tw-transition-3" href="#project-loco">Sensor Interfacing</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service-three-single ms-auto" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="500">
+                    <div class="service-three-item d-flex justify-content-between align-items-center">
+                      <div class="service-three-content d-flex tw-gap-14">
+                        <div>
+                          <span class="service-three-number text-white tw-text-xl d-inline-flex align-items-center tw-gap-3 lh-1 tw-mt-5 tw-transition-3">04 <img class="tw-transition-3" src="assets/icons/service-three-arrow.svg" alt="" /></span>
+                        </div>
+                        <div>
+                          <h2 class="service-three-title tw-text-15 text-white tw-mb-4"><a href="#achievements">Problem Solving</a></h2>
+                          <div class="portfolio-list portfolio-two-list">
+                            <ul class="d-flex tw-gap-205 flex-wrap">
+                              <li><a class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-heading tw-transition-3" href="#achievements">Java</a></li>
+                              <li><a class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-heading tw-transition-3" href="#achievements">DSA</a></li>
+                              <li><a class="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-heading tw-transition-3" href="#achievements">Debugging</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== Projects ==================== -->
+        <section class="portfolio-three-area py-120 position-relative z-1" id="projects">
+          <div class="portfolio-three-shape position-absolute top-0 z-n1" aria-hidden="true">
+            <h3 class="portfolio-three-shape-title">works</h3>
+          </div>
+          <div class="container tw-container-1800-px">
+            <div class="row">
+              <div class="col-xl-12">
+                <div class="portfolio-three-wrapper d-flex justify-content-between flex-wrap align-items-start position-relative z-1">
+                  <!-- S.E.E.D -->
+                  <div class="portfolio-three-item tw-rounded-lg tw-mb-705 portfolio-wrapper" id="project-seed">
+                    <div class="portfolio-three-wrap d-flex justify-content-between flex-wrap row-gap-2">
+                      <div class="tw-mb-6">
+                        <h2 class="tw-text-605 fw-medium tw-mb-4">
+                          <a class="hover-text-main-two-600" href="https://github.com/navinkarthik-R/PROJECT-S.E.E.D" target="_blank" rel="noopener">Project S.E.E.D</a>
+                        </h2>
+                        <div class="portfolio-three-list portfolio-list tw-mb-6">
+                          <ul class="d-flex tw-gap-205 flex-wrap">
+                            <li><a class="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3" href="#project-seed">React</a></li>
+                            <li><a class="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3" href="#project-seed">Three.js</a></li>
+                            <li><a class="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3" href="#project-seed">Edge AI</a></li>
+                          </ul>
+                        </div>
+                        <p class="portfolio-three-desc tw-text-lg tw-mb-4">
+                          AI-assisted early developmental screening for children. Frontend and edge-AI contributor in a 3-member team: built the landing page, authentication flows and a Three.js 3D data-visualisation module, and integrated the OpenCV, MediaPipe and XGBoost pipeline. Global Rank 51-100 at HACKHAZARDS '26.
+                        </p>
+                        <div class="portfolio-three-links d-flex tw-gap-6">
+                          <a class="text-heading hover-text-main-two-600" href="https://github.com/navinkarthik-R/PROJECT-S.E.E.D" target="_blank" rel="noopener">GitHub <i class="ph ph-arrow-up-right"></i></a>
+                        </div>
+                      </div>
+                      <div class="portfolio-three-button">
+                        <a class="portfolio-three-btn tw-w-8 tw-h-8 lh-1 d-inline-flex justify-content-center align-items-center text-heading rounded-circle hover-bg-main-two-600 hover-text-white" href="https://github.com/navinkarthik-R/PROJECT-S.E.E.D" target="_blank" rel="noopener" aria-label="S.E.E.D on GitHub"><i class="ph ph-arrow-up-right"></i></a>
+                      </div>
+                    </div>
+                    <div class="portfolio-thumb not-hide-cursor fw-bold mb-0 tw-rounded-lg" data-cursor="View">
+                      <a class="d-block cursor-hide tw-rounded-lg" href="https://github.com/navinkarthik-R/PROJECT-S.E.E.D" target="_blank" rel="noopener">
+                        <img class="w-100 tw-rounded-lg" src="assets/images/seed-dashboard.jpg" alt="S.E.E.D clinician view: a child's screening with gaze-tracking and reaction-latency scores and a specialist-recommended risk tier" />
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- LOCO -->
+                  <div class="portfolio-three-item tw-rounded-lg tw-mb-705 portfolio-wrapper" id="project-loco">
+                    <div class="portfolio-three-wrap d-flex justify-content-between flex-wrap row-gap-2">
+                      <div class="tw-mb-6">
+                        <h2 class="tw-text-605 fw-medium tw-mb-4">
+                          <a class="hover-text-main-two-600" href="https://github.com/navinkarthik-R/LOCO-HAZARD-DETECTION-HELMET" target="_blank" rel="noopener">LOCO Hazard Detection Helmet</a>
+                        </h2>
+                        <div class="portfolio-three-list portfolio-list tw-mb-6">
+                          <ul class="d-flex tw-gap-205 flex-wrap">
+                            <li><a class="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3" href="#project-loco">ESP32</a></li>
+                            <li><a class="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3" href="#project-loco">C++</a></li>
+                            <li><a class="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3" href="#project-loco">IoT</a></li>
+                          </ul>
+                        </div>
+                        <p class="portfolio-three-desc tw-text-lg tw-mb-4">
+                          Team leader. An ESP32 safety-helmet prototype that monitors heat and humidity, tracks GPS, shows live readings on an LCD, and raises a buzzer alarm plus a Telegram alert with the wearer's location. Gas (MQ-2) and heart-rate/SpO2 alert logic is tested in a PC simulation. Won 1st Prize at the IETE Symposium; presented at National Symposium 2K25.
+                        </p>
+                        <div class="portfolio-three-links d-flex tw-gap-6">
+                          <a class="text-heading hover-text-main-two-600" href="https://github.com/navinkarthik-R/LOCO-HAZARD-DETECTION-HELMET" target="_blank" rel="noopener">GitHub <i class="ph ph-arrow-up-right"></i></a>
+                        </div>
+                      </div>
+                      <div class="portfolio-three-button">
+                        <a class="portfolio-three-btn tw-w-8 tw-h-8 lh-1 d-inline-flex justify-content-center align-items-center text-heading rounded-circle hover-bg-main-two-600 hover-text-white" href="https://github.com/navinkarthik-R/LOCO-HAZARD-DETECTION-HELMET" target="_blank" rel="noopener" aria-label="LOCO helmet on GitHub"><i class="ph ph-arrow-up-right"></i></a>
+                      </div>
+                    </div>
+                    <div class="portfolio-thumb not-hide-cursor fw-bold mb-0 tw-rounded-lg" data-cursor="View">
+                      <a class="d-block cursor-hide tw-rounded-lg" href="https://github.com/navinkarthik-R/LOCO-HAZARD-DETECTION-HELMET" target="_blank" rel="noopener">
+                        <img class="w-100 tw-rounded-lg" src="assets/images/loco-helmet.jpg" alt="LOCO prototype: ESP32 and sensors on a breadboard wired to an LCD on a yellow safety helmet" />
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- RCCP -->
+                  <div class="portfolio-three-item tw-rounded-lg tw-mb-705 portfolio-wrapper" id="project-rccp">
+                    <div class="portfolio-three-wrap d-flex justify-content-between flex-wrap row-gap-2">
+                      <div class="tw-mb-6">
+                        <h2 class="tw-text-605 fw-medium tw-mb-4">
+                          <a class="hover-text-main-two-600" href="https://warriors-tau.vercel.app/" target="_blank" rel="noopener">RCCP: Reverse Chain Compliance</a>
+                        </h2>
+                        <div class="portfolio-three-list portfolio-list tw-mb-6">
+                          <ul class="d-flex tw-gap-205 flex-wrap">
+                            <li><a class="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3" href="#project-rccp">Next.js</a></li>
+                            <li><a class="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3" href="#project-rccp">React</a></li>
+                            <li><a class="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3" href="#project-rccp">Frontend</a></li>
+                          </ul>
+                        </div>
+                        <p class="portfolio-three-desc tw-text-lg tw-mb-4">
+                          Built the frontend in a 24-hour hackathon at Saveetha Engineering College against about 100 teams. RCCP tracks expired medicines from pharmacy shelf to verified destruction on an append-only batch ledger, catches re-entry fraud with deterministic invariant checks, and offers a public no-login batch check.
+                        </p>
+                        <div class="portfolio-three-links d-flex tw-gap-6">
+                          <a class="text-heading hover-text-main-two-600" href="https://warriors-tau.vercel.app/" target="_blank" rel="noopener">Live demo <i class="ph ph-arrow-up-right"></i></a>
+                          <a class="text-heading hover-text-main-two-600" href="https://github.com/navinkarthik-R/RCCP" target="_blank" rel="noopener">GitHub <i class="ph ph-arrow-up-right"></i></a>
+                        </div>
+                      </div>
+                      <div class="portfolio-three-button">
+                        <a class="portfolio-three-btn tw-w-8 tw-h-8 lh-1 d-inline-flex justify-content-center align-items-center text-heading rounded-circle hover-bg-main-two-600 hover-text-white" href="https://warriors-tau.vercel.app/" target="_blank" rel="noopener" aria-label="RCCP live demo"><i class="ph ph-arrow-up-right"></i></a>
+                      </div>
+                    </div>
+                    <div class="portfolio-thumb not-hide-cursor fw-bold mb-0 tw-rounded-lg" data-cursor="Live">
+                      <a class="d-block cursor-hide tw-rounded-lg" href="https://warriors-tau.vercel.app/" target="_blank" rel="noopener">
+                        <img class="w-100 tw-rounded-lg" src="assets/images/rccp-landing.jpg" alt="RCCP landing page: Expired medicine, accounted for down to the last unit" />
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="about-three-counter portfolio-three-counter d-inline-block position-absolute bottom-0 end-0">
+                    <div class="tw-hover-btn-wrapper d-inline-block">
+                      <a class="tw-btn-circle tw-hover-btn-item tw-hover-btn tw-w-160-px tw-h-160-px lh-1 d-inline-flex justify-content-center align-items-center rounded-circle position-relative overflow-hidden" href="https://github.com/navinkarthik-R" target="_blank" rel="noopener">
+                        <span class="d-flex flex-column justify-content-center">
+                          <span class="text-heading fw-bold tw-transition-3 tw-text-2xl fw-semibold">More on <br />GitHub <i class="ph ph-arrow-up-right"></i></span>
+                        </span>
+                        <i class="tw-btn-circle-dot bg-main-two-600"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== Achievements ==================== -->
+        <div class="feature-three-area py-120 position-relative z-1" id="achievements">
+          <div class="container tw-container-1800-px">
+            <div class="row">
+              <div class="col-xl-12">
+                <h2 class="feature-three-heading tw-text-15 text-white tw-char-animation">Achievements &amp; certifications</h2>
+                <div class="feature-three-wrapper hover__widget">
+                  <div class="feature-three-single current hover__reveal-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="feature-three-item d-flex justify-content-between align-items-center">
+                      <div class="feature-three-left d-flex align-items-center">
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-20">01</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-160-px">IETE</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">1st Prize, LOCO Hazard Detection Helmet</span></div>
+                      </div>
+                      <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">Winner</span></div>
+                    </div>
+                    <div class="hover__reveal-bg bg-img" data-background-image="assets/images/loco-helmet.jpg"></div>
+                  </div>
+                  <div class="feature-three-single hover__reveal-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="feature-three-item d-flex justify-content-between align-items-center">
+                      <div class="feature-three-left d-flex align-items-center">
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-20">02</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-160-px">HackHazards</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">Global Rank 51-100, Project S.E.E.D</span></div>
+                      </div>
+                      <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">Top 100</span></div>
+                    </div>
+                    <div class="hover__reveal-bg bg-img" data-background-image="assets/images/seed-dashboard.jpg"></div>
+                  </div>
+                  <div class="feature-three-single hover__reveal-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="feature-three-item d-flex justify-content-between align-items-center">
+                      <div class="feature-three-left d-flex align-items-center">
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-20">03</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-160-px">Eclearnix 4.0</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">Cleared Round 2, top 50 of 250 teams</span></div>
+                      </div>
+                      <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">Top 50</span></div>
+                    </div>
+                  </div>
+                  <div class="feature-three-single hover__reveal-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="feature-three-item d-flex justify-content-between align-items-center">
+                      <div class="feature-three-left d-flex align-items-center">
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-20">04</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-160-px">Saveetha</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">24-hour hackathon, RCCP, about 100 teams</span></div>
+                      </div>
+                      <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">24 hrs</span></div>
+                    </div>
+                    <div class="hover__reveal-bg bg-img" data-background-image="assets/images/rccp-landing.jpg"></div>
+                  </div>
+                  <div class="feature-three-single hover__reveal-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="feature-three-item d-flex justify-content-between align-items-center">
+                      <div class="feature-three-left d-flex align-items-center">
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-20">05</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-160-px">NPTEL</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">Programming in Java, scored 85%</span></div>
+                      </div>
+                      <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">Certified</span></div>
+                    </div>
+                  </div>
+                  <div class="feature-three-single hover__reveal-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="feature-three-item d-flex justify-content-between align-items-center">
+                      <div class="feature-three-left d-flex align-items-center">
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-20">06</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block tw-w-160-px">INSTERA 2K25</span></div>
+                        <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">Project presentation</span></div>
+                      </div>
+                      <div><span class="feature-three-text tw-text-605 fw-medium text-white tw-transition-3 d-inline-block">Presenter</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== Education & Experience ==================== -->
+        <section class="testimonial-three-area pt-120 tw-pb-22" id="education">
+          <div class="container tw-container-1800-px">
+            <div class="row justify-content-center tw-mb-21">
+              <div class="col-xl-10">
+                <div class="text-center">
+                  <h2 class="testimonial-three-title text-heading tw-text-15 tw-itm-title tw-itm-anim">
+                    Education and experience: an engineering foundation, tested on a live plant floor.
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div class="row gy-4">
+              <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="edu-card tw-rounded-lg">
+                  <span class="d-inline-block text-main-two-600 fw-semibold tw-mb-4">2023 - Present</span>
+                  <h3 class="tw-text-605 fw-medium tw-mb-3">B.E. Electronics &amp; Communication Engineering</h3>
+                  <p class="tw-text-lg tw-mb-2">Velammal Engineering College, Chennai</p>
+                  <p class="tw-text-lg fw-semibold text-heading">CGPA 8.00</p>
+                </div>
+              </div>
+              <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <div class="edu-card tw-rounded-lg">
+                  <span class="d-inline-block text-main-two-600 fw-semibold tw-mb-4">Nov - Dec 2025</span>
+                  <h3 class="tw-text-605 fw-medium tw-mb-3">Internship Trainee</h3>
+                  <p class="tw-text-lg tw-mb-2">TNPGCL, North Chennai Thermal Power Station, Stage-II</p>
+                  <p class="tw-text-lg">19 working days studying thermal power generation, plant operations and SCADA-based monitoring and control at a live station.</p>
+                </div>
+              </div>
+              <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                <div class="edu-card tw-rounded-lg">
+                  <span class="d-inline-block text-main-two-600 fw-semibold tw-mb-4">2020 - 2022</span>
+                  <h3 class="tw-text-605 fw-medium tw-mb-3">HSC &amp; SSLC</h3>
+                  <p class="tw-text-lg tw-mb-2">Alpha Matriculation Higher Secondary School</p>
+                  <p class="tw-text-lg">HSC 77.17% (2022), SSLC 70% (2020)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        </main>
+
+        <!-- ==================== Contact / Footer ==================== -->
+        <footer class="footer-three-area pt-120 tw-pb-10 position-relative z-1" id="contact">
+          <div class="container tw-container-1800-px">
+            <div class="row justify-content-between pb-120">
+              <div class="col-xl-5 col-lg-6">
+                <div class="footer-three-top-left tw-me-25" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                  <div class="tw-mb-9">
+                    <h2 class="tw-text-15 text-white tw-char-animation">Let's build something meaningful</h2>
+                  </div>
+                  <div class="d-inline-flex align-items-center tw-gap-6 tw-mb-10 flex-wrap">
+                    <a class="tw-text-2xl fw-medium text-main-600 hover-underline hover-text-white" href="mailto:navinkarthik26@gmail.com">navinkarthik26@gmail.com</a>
+                    <span class="tw-text-2xl fw-medium text-main-600">//</span>
+                    <span class="tw-text-2xl fw-medium text-main-600">Chennai, India</span>
+                  </div>
+                  <div class="footer-three-top-info tw-p-705 tw-rounded-lg d-flex tw-gap-6">
+                    <div class="footer-three-top-thumb tw-w-160-px">
+                      <img class="tw-rounded-lg w-100" src="assets/images/navin-avatar.jpg" alt="Navin Karthik R" />
+                    </div>
+                    <div class="footer-three-top-content d-flex justify-content-between flex-column">
+                      <div>
+                        <h3 class="tw-text-xl text-white tw-mb-2">Navin Karthik R</h3>
+                        <p class="text-white">Full Stack Developer</p>
+                      </div>
+                      <div class="footer-three-social">
+                        <ul class="d-flex align-items-center tw-gap-1">
+                          <li><a class="tw-w-11 tw-h-101 lh-1 d-inline-flex align-items-center justify-content-center tw-rounded-lg tw-text-xl text-heading hover-bg-main-600 hover-text-heading" href="https://github.com/navinkarthik-R" target="_blank" rel="noopener" aria-label="GitHub"><i class="ph ph-github-logo"></i></a></li>
+                          <li><a class="tw-w-11 tw-h-101 lh-1 d-inline-flex align-items-center justify-content-center tw-rounded-lg tw-text-xl text-heading hover-bg-main-600 hover-text-heading" href="https://www.linkedin.com/in/navin-karthik-r" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a></li>
+                          <li><a class="tw-w-11 tw-h-101 lh-1 d-inline-flex align-items-center justify-content-center tw-rounded-lg tw-text-xl text-heading hover-bg-main-600 hover-text-heading" href="mailto:navinkarthik26@gmail.com" aria-label="Email"><i class="ph ph-envelope-simple"></i></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6">
+                <div class="footer-three-form" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                  <form id="contact-form" data-to="navinkarthik26@gmail.com">
+                    <div class="row">
+                      <div class="col-xl-12">
+                        <div class="position-relative tw-mb-7">
+                          <input type="text" name="fullname" required aria-label="Your name" class="form-control bg-transparent shadow-none tw-rounded-lg text-white tw-ps-7 tw-pe-13 tw-placeholder-text-neutral-100 focus-border-main-600 tw-h-18 focus-tw-placeholder-text-hidden tw-placeholder-transition-2" placeholder="Your Name" />
+                        </div>
+                      </div>
+                      <div class="col-xl-12">
+                        <div class="position-relative tw-mb-7">
+                          <input type="email" name="email" required aria-label="Your email" class="form-control bg-transparent shadow-none tw-rounded-lg text-white tw-ps-7 tw-pe-13 tw-placeholder-text-neutral-100 focus-border-main-600 tw-h-18 focus-tw-placeholder-text-hidden tw-placeholder-transition-2" placeholder="Email Address" />
+                        </div>
+                      </div>
+                      <div class="col-xl-12">
+                        <div class="position-relative tw-mb-7">
+                          <textarea name="message" required aria-label="Message" class="form-control bg-transparent shadow-none tw-h-196-px tw-rounded-lg text-white tw-ps-7 tw-pe-13 tw-placeholder-text-neutral-100 focus-border-main-600 focus-tw-placeholder-text-hidden tw-placeholder-transition-2" placeholder="Message"></textarea>
+                        </div>
+                      </div>
+                      <div class="col-xl-12">
+                        <div class="contact-button">
+                          <button type="submit" class="tw-hover-btn bg-main-600 text-heading tw-text-xl fw-bold tw-py-4 tw-px-10 d-inline-flex justify-content-center w-100 hover-text-heading hover-bg-white tw-transition-3 tw-rounded-lg">send message</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-three-border tw-px-18 tw-mb-10">
+            <div class="container-fluid gx-0">
+              <div class="row">
+                <div class="col-xl-12">
+                  <div class="footer-three-middile d-flex align-items-center justify-content-between">
+                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                      <h4 class="tw-text-2xl text-white tw-mb-2">Quick Links</h4>
+                      <ul class="d-flex tw-gap-2 flex-wrap">
+                        <li><a class="tw-text-lg text-white" href="#home">Home,</a></li>
+                        <li><a class="tw-text-lg text-white" href="#about">About,</a></li>
+                        <li><a class="tw-text-lg text-white" href="#projects">Projects,</a></li>
+                        <li><a class="tw-text-lg text-white" href="#achievements">Achievements,</a></li>
+                        <li><a class="tw-text-lg text-white" href="#contact">Contact</a></li>
+                      </ul>
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                      <a class="footer-three-back-to-top tw-w-170 tw-h-170 lh-1 d-inline-flex justify-content-center align-items-center bg-main-two-600 text-white tw-text-3xl rounded-circle" href="#" aria-label="Back to top"><i class="ph ph-arrow-up"></i></a>
+                    </div>
+                    <div class="text-lg-end" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                      <h4 class="tw-text-2xl text-white tw-mb-2">Navin Karthik R</h4>
+                      <p class="tw-text-lg text-white">&copy; 2026 Navin Karthik R. All rights reserved</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container tw-container-1800-px">
+            <div class="footer-three-bottom" aria-hidden="true">
+              <h5 class="footer-three-bottom-title text-white">Navin Karthik</h5>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/jquery.marquee.min.js"></script>
+    <script src="assets/js/purecounter.js"></script>
+    <script src="assets/js/gsap/gsap.min.js"></script>
+    <script src="assets/js/gsap/ScrollToPlugin.min.js"></script>
+    <script src="assets/js/gsap/ScrollTrigger.min.js"></script>
+    <script src="assets/js/gsap/ScrollSmoother.min.js"></script>
+    <script src="assets/js/gsap/SplitText.min.js"></script>
+    <script src="assets/js/custom-gsap.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/tw-cursor.js"></script>
+  </body>
+</html>
