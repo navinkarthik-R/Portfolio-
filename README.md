@@ -22,6 +22,6 @@ python3 -m http.server 8080
 - Text and links: `index.html` (sections: hero, about, skills, projects, achievements, education, contact).
 - Images: `assets/images/`. The hero photo is a background-removed cut-out (`navin-cutout.webp`).
 - Resume: replace `Navin_Karthik_R_Resume.pdf` (linked from "Download CV").
-- The contact form posts to [FormSubmit](https://formsubmit.co), which emails each message to
-  `navinkarthik26@gmail.com` (the `data-to` attribute on the form). The very first submission only sends an
-  "Activate Form" email to that inbox; click it once and every later message is delivered.
+- The contact form posts to [Web3Forms](https://web3forms.com), which emails each message to the inbox
+  that owns the access key in the form's `data-key` attribute (the key is public by design; get one
+  free at web3forms.com with `navinkarthik26@gmail.com`). Free plan: 250 messages a month.

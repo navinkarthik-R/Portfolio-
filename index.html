@@ -76,6 +76,10 @@
         caret-color: #fff !important;
         -webkit-box-shadow: 0 0 0 1000px #010406 inset !important;
       }
+      .footer-three-form .form-control::placeholder {
+        color: #fff !important;
+        opacity: 1;
+      }
       .edu-card {
         height: 100%;
         background: #f5f5f5;
@@ -816,7 +820,8 @@
               </div>
               <div class="col-xl-6 col-lg-6">
                 <div class="footer-three-form" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                  <form id="contact-form" data-to="navinkarthik26@gmail.com">
+                  <!-- data-key: Web3Forms access key for navinkarthik26@gmail.com (public by design) -->
+                  <form id="contact-form" data-to="navinkarthik26@gmail.com" data-key="YOUR_WEB3FORMS_ACCESS_KEY">
                     <div class="row">
                       <div class="col-xl-12">
                         <div class="position-relative tw-mb-7">
@@ -838,7 +843,7 @@
                           <button type="submit" class="tw-hover-btn bg-main-600 text-heading tw-text-xl fw-bold tw-py-4 tw-px-10 d-inline-flex justify-content-center w-100 hover-text-heading hover-bg-white tw-transition-3 tw-rounded-lg">send message</button>
                         </div>
                         <!-- spam trap: bots fill it, people never see it -->
-                        <input type="text" name="_honey" class="d-none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+                        <input type="checkbox" name="botcheck" class="d-none" tabindex="-1" autocomplete="off" aria-hidden="true" />
                         <p id="contact-status" class="text-white tw-mt-4" role="status" aria-live="polite"></p>
                       </div>
                     </div>
