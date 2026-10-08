@@ -66,6 +66,16 @@
         min-width: 160px;
         white-space: nowrap;
       }
+      /* the template forces autofilled text to the dark heading colour, which
+         vanishes on the black footer; keep autofilled fields readable */
+      .footer-three-form input:-webkit-autofill,
+      .footer-three-form input:-webkit-autofill:hover,
+      .footer-three-form input:-webkit-autofill:focus,
+      .footer-three-form textarea:-webkit-autofill {
+        -webkit-text-fill-color: #fff !important;
+        caret-color: #fff !important;
+        -webkit-box-shadow: 0 0 0 1000px #010406 inset !important;
+      }
       .edu-card {
         height: 100%;
         background: #f5f5f5;
@@ -810,17 +820,17 @@
                     <div class="row">
                       <div class="col-xl-12">
                         <div class="position-relative tw-mb-7">
-                          <input type="text" name="name" required aria-label="Your name" class="form-control bg-transparent shadow-none tw-rounded-lg text-white tw-ps-7 tw-pe-13 tw-placeholder-text-neutral-100 focus-border-main-600 tw-h-18 focus-tw-placeholder-text-hidden tw-placeholder-transition-2" placeholder="Your Name" />
+                          <input type="text" name="name" required aria-label="Your name" class="form-control bg-transparent shadow-none tw-rounded-lg text-white tw-ps-7 tw-pe-13 tw-placeholder-text-neutral-100 focus-border-main-600 tw-h-18 focus-tw-placeholder-text-hidden tw-placeholder-transition-2" placeholder="Your name" />
                         </div>
                       </div>
                       <div class="col-xl-12">
                         <div class="position-relative tw-mb-7">
-                          <input type="email" name="email" required aria-label="Your email" class="form-control bg-transparent shadow-none tw-rounded-lg text-white tw-ps-7 tw-pe-13 tw-placeholder-text-neutral-100 focus-border-main-600 tw-h-18 focus-tw-placeholder-text-hidden tw-placeholder-transition-2" placeholder="Email Address" />
+                          <input type="email" name="email" required aria-label="Your email" class="form-control bg-transparent shadow-none tw-rounded-lg text-white tw-ps-7 tw-pe-13 tw-placeholder-text-neutral-100 focus-border-main-600 tw-h-18 focus-tw-placeholder-text-hidden tw-placeholder-transition-2" placeholder="Your email (so I can reply)" />
                         </div>
                       </div>
                       <div class="col-xl-12">
                         <div class="position-relative tw-mb-7">
-                          <textarea name="message" required aria-label="Message" class="form-control bg-transparent shadow-none tw-h-196-px tw-rounded-lg text-white tw-ps-7 tw-pe-13 tw-placeholder-text-neutral-100 focus-border-main-600 focus-tw-placeholder-text-hidden tw-placeholder-transition-2" placeholder="Message"></textarea>
+                          <textarea name="message" required aria-label="Message" class="form-control bg-transparent shadow-none tw-h-196-px tw-rounded-lg text-white tw-ps-7 tw-pe-13 tw-placeholder-text-neutral-100 focus-border-main-600 focus-tw-placeholder-text-hidden tw-placeholder-transition-2" placeholder="Your message"></textarea>
                         </div>
                       </div>
                       <div class="col-xl-12">

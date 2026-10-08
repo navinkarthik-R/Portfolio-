@@ -138,17 +138,21 @@
       body: JSON.stringify(data),
     })
       .then(function (r) {
-        return r.json();
+        return r.json().catch(function () {
+          throw new Error("HTTP " + r.status);
+        });
       })
       .then(function (res) {
-        if (String(res.success) !== "true") throw new Error(res.message);
+        if (String(res.success) !== "true") throw new Error(res.message || "no reason given");
         form.reset();
         $status.text("Thanks! Your message has been sent. I'll reply by email.");
       })
-      .catch(function () {
-        $status.html(
-          'Sorry, the message could not be sent. Please email me at <a class="text-main-600 hover-underline" href="mailto:' +
-            to + '">' + to + "</a>.",
+      .catch(function (err) {
+        // show FormSubmit's own reason (e.g. activation pending); text nodes, never HTML
+        $status.empty().append(
+          document.createTextNode("Sorry, the message could not be sent (" + err.message + "). Please email me at "),
+          $('<a class="text-main-600 hover-underline"></a>').attr("href", "mailto:" + to).text(to),
+          ".",
         );
       })
       .finally(function () {
