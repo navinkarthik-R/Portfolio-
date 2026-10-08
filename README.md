@@ -11,14 +11,17 @@ python3 -m http.server 8080
 # open http://localhost:8080
 ```
 
-## Deploy (GitHub Pages)
+## Deploy
 
-Settings → Pages → Source: *Deploy from a branch* → `main` / `root`.
-The site is then served at `https://navinkarthik-r.github.io/Portfolio-/`.
+- **Vercel:** the project is linked to this repo; every push to `main` deploys to production.
+- **GitHub Pages:** Settings → Pages → *Deploy from a branch* → `main` / root, served at
+  `https://navinkarthik-r.github.io/Portfolio-/`.
 
 ## Editing
 
 - Text and links: `index.html` (sections: hero, about, skills, projects, achievements, education, contact).
 - Images: `assets/images/`. The hero photo is a background-removed cut-out (`navin-cutout.webp`).
 - Resume: replace `Navin_Karthik_R_Resume.pdf` (linked from "Download CV").
-- The contact form has no backend: it opens the visitor's mail app with the message pre-filled.
+- The contact form posts to [FormSubmit](https://formsubmit.co), which emails each message to
+  `navinkarthik26@gmail.com` (the `data-to` attribute on the form). The very first submission only sends an
+  "Activate Form" email to that inbox; click it once and every later message is delivered.

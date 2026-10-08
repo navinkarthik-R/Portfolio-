@@ -21,6 +21,11 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
       /* Portfolio-specific overrides on top of the Unifex template */
+      #smooth-content {
+        /* slide-in animations start off-screen; never let them widen the page.
+           !important because ScrollSmoother sets inline overflow on touch devices */
+        overflow-x: clip !important;
+      }
       .header-three-logo a {
         font-family: var(--heading-font);
         font-size: 1.9rem;
@@ -29,7 +34,7 @@
         color: hsl(var(--heading-color));
       }
       .banner-three-man {
-        width: min(1060px, 68vw);
+        width: min(900px, 56vw);
       }
       .banner-three-man img {
         width: 100%;
@@ -53,7 +58,6 @@
         text-underline-offset: 4px;
       }
       .feature-three-heading {
-        font-size: clamp(2rem, 6vw, 3.75rem);
         word-break: normal;
         margin-block-end: 60px;
       }
@@ -73,6 +77,58 @@
       .footer-three-bottom-title {
         font-size: clamp(32px, 12.5vw, 380px) !important;
         white-space: nowrap;
+      }
+
+      /* Type scale: the template's sizes run large, so scale fluidly with the screen */
+      .tw-text-15 { font-size: clamp(1.625rem, 1.1rem + 2.2vw, 2.75rem); }
+      .service-three-title { font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem); }
+      .tw-text-120 { font-size: clamp(1.625rem, 1.2rem + 1.5vw, 2.5rem); }
+      .tw-text-101 { font-size: clamp(1.75rem, 1.4rem + 1vw, 2.25rem); }
+      .tw-text-605 { font-size: clamp(1.125rem, 1rem + 0.45vw, 1.375rem); }
+      .tw-text-3xl { font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem); }
+      .tw-text-2xl { font-size: clamp(1.125rem, 1rem + 0.35vw, 1.25rem); }
+      .tw-text-xl { font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem); }
+      .tw-text-lg { font-size: 1rem; }
+      .banner-three-left-title { font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem); }
+      .banner-three-title { font-size: clamp(64px, min(18vw, 32vh), 330px); text-align: center; }
+      .marquee-two-title { font-size: clamp(48px, 7.5vw, 120px); }
+      .portfolio-three-shape-title { font-size: clamp(100px, 28vw, 460px); }
+      .about-three-counter .tw-btn-circle { width: clamp(200px, 22vw, 320px); height: clamp(200px, 22vw, 320px); }
+      .about-three-counter .tw-btn-circle-icon { font-size: clamp(72px, 9vw, 130px); }
+
+      /* Phones and tablets: the template hides the intro and stats below 1200px.
+         Stack everything instead: title, photo, tagline, intro, stats. */
+      @media (max-width: 1199px) {
+        .banner-three-wrapper { display: flex; flex-direction: column; }
+        .banner-three-title { order: 1; margin-block-end: 0 !important; text-align: center; }
+        .banner-three-man {
+          order: 2;
+          position: relative !important;
+          left: auto !important;
+          transform: none !important;
+          inset-block-end: auto;
+          width: min(640px, 92vw);
+          margin: -7% auto 0;
+        }
+        .banner-three-wrap { order: 3; flex-direction: column; align-items: stretch !important; gap: 24px; }
+        .banner-three-center { order: -1; margin-block-start: 8px; }
+        .banner-three-left,
+        .banner-three-right { display: block; max-width: none; margin: 0; }
+        .banner-three-right {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+          gap: 16px;
+          padding: 16px;
+        }
+        .banner-three-counter-item { max-width: none; margin: 0 !important; }
+      }
+      @media (max-height: 500px) {
+        /* landscape phones: don't open on an empty screen */
+        .banner-three-area { padding-block-start: 90px; }
+      }
+      @media (max-width: 767px) {
+        /* outlined letters blur at small sizes; use solid text */
+        .banner-three-center-title { color: hsl(var(--heading-color)); -webkit-text-stroke-width: 0; }
       }
     </style>
   </head>
@@ -754,7 +810,7 @@
                     <div class="row">
                       <div class="col-xl-12">
                         <div class="position-relative tw-mb-7">
-                          <input type="text" name="fullname" required aria-label="Your name" class="form-control bg-transparent shadow-none tw-rounded-lg text-white tw-ps-7 tw-pe-13 tw-placeholder-text-neutral-100 focus-border-main-600 tw-h-18 focus-tw-placeholder-text-hidden tw-placeholder-transition-2" placeholder="Your Name" />
+                          <input type="text" name="name" required aria-label="Your name" class="form-control bg-transparent shadow-none tw-rounded-lg text-white tw-ps-7 tw-pe-13 tw-placeholder-text-neutral-100 focus-border-main-600 tw-h-18 focus-tw-placeholder-text-hidden tw-placeholder-transition-2" placeholder="Your Name" />
                         </div>
                       </div>
                       <div class="col-xl-12">
@@ -771,6 +827,9 @@
                         <div class="contact-button">
                           <button type="submit" class="tw-hover-btn bg-main-600 text-heading tw-text-xl fw-bold tw-py-4 tw-px-10 d-inline-flex justify-content-center w-100 hover-text-heading hover-bg-white tw-transition-3 tw-rounded-lg">send message</button>
                         </div>
+                        <!-- spam trap: bots fill it, people never see it -->
+                        <input type="text" name="_honey" class="d-none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+                        <p id="contact-status" class="text-white tw-mt-4" role="status" aria-live="polite"></p>
                       </div>
                     </div>
                   </form>
