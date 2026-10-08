@@ -118,9 +118,8 @@
 
   ////////////////////////////////////////////////////
   // 10. Contact Form Js
-  // Static site, no backend: FormSubmit relays the message to the inbox in
-  // data-to. Its first submission only emails that inbox an "Activate Form"
-  // link; messages are delivered once it has been clicked.
+  // Static site, no backend: Web3Forms emails each message to the inbox that
+  // owns the access key in data-key (the key is public by design).
   $("#contact-form").on("submit", function (e) {
     e.preventDefault();
     var form = this;
@@ -128,11 +127,12 @@
     var $btn = $(form).find("button[type=submit]");
     var $status = $("#contact-status");
     var data = Object.fromEntries(new FormData(form));
-    data._subject = "Portfolio enquiry from " + data.name;
-    data._template = "table";
+    data.access_key = form.dataset.key;
+    data.subject = "Portfolio enquiry from " + data.name;
+    data.from_name = "Portfolio contact form";
     $btn.prop("disabled", true).text("sending...");
     $status.text("");
-    fetch("https://formsubmit.co/ajax/" + to, {
+    fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify(data),
@@ -148,7 +148,7 @@
         $status.text("Thanks! Your message has been sent. I'll reply by email.");
       })
       .catch(function (err) {
-        // show FormSubmit's own reason (e.g. activation pending); text nodes, never HTML
+        // show the service's own reason (e.g. invalid key); text nodes, never HTML
         $status.empty().append(
           document.createTextNode("Sorry, the message could not be sent (" + err.message + "). Please email me at "),
           $('<a class="text-main-600 hover-underline"></a>').attr("href", "mailto:" + to).text(to),
